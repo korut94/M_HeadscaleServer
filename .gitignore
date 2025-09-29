@@ -1,0 +1,5 @@
+# headscale
+lib/
+run/
+# caddy
+!caddy/Caddyfile

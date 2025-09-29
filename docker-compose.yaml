@@ -1,0 +1,31 @@
+services:
+  headscale:
+    image: docker.io/headscale/headscale:latest
+    container_name: headscale
+    ports:
+      - "8080:8080"
+      - "9090:9090"
+    volumes:
+      - ./config:/etc/headscale
+      - ./lib:/var/lib/headscale
+      - ./run:/var/run/headscale
+    command: serve
+    restart: unless-stopped
+  headscale-ui:
+    image: ghcr.io/gurucomputing/headscale-ui:latest
+    container_name: headscale-ui
+    environment:
+      - HTTP_PORT=8080
+    restart: unless-stopped
+  headscale-caddy:
+    image: caddy:alpine
+    container_name: headscale-reverse-proxy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./caddy/Caddyfile:/etc/caddy/Caddyfile
+      - ./caddy/data:/data
+      - ./caddy/config:/config
+    restart: unless-stopped
+
