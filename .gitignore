@@ -1,5 +1,7 @@
-# headscale
+# Global
+.env
+# Headscale
 lib/
 run/
-# caddy
+# Caddy
 !caddy/Caddyfile

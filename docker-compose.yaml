@@ -19,10 +19,12 @@ services:
     restart: unless-stopped
   headscale-caddy:
     image: caddy:alpine
-    container_name: headscale-reverse-proxy
+    container_name: headscale-rproxy
     ports:
       - "80:80"
       - "443:443"
+    env_file:
+      - .env
     volumes:
       - ./caddy/Caddyfile:/etc/caddy/Caddyfile
       - ./caddy/data:/data
