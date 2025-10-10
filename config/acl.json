@@ -4,11 +4,6 @@
 		"group:family": ["korut94@", "usagi@"],
 		"group:clarence": ["korut94@", "test-user@"],
 	},
-	"tagOwners": {
-		"tag:nas": ["group:admin"],
-		"tag:p4d": ["group:admin"],
-		"tag:p4p": ["group:admin", "p4@"]
-	},
 	"acls": [
 		{
 			"action": "accept",
@@ -17,15 +12,19 @@
 		},
 		{
 			"action": "accept",
-			"src": ["tag:p4p"],
-			"dst": ["tag:p4d:*"]
+			"src": ["p4@"],
+			"dst": ["main-server:*"]
 		},
 		{
 			"action": "accept",
 			"src": ["group:clarence"],
 			"dst": [
-				"tag:p4p:*"
+				"clarence-p4d:*"
 			]
 		}
-	]
+	],
+	"hosts": {
+		"main-server": "100.64.0.1",
+		"clarence-p4d": "100.64.0.5"
+	}
 }
