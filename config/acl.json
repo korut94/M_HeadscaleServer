@@ -1,31 +1,31 @@
 {
 	"groups": {
-		"group:admin": [korut94],
-		"group:family": [korut94, usagi],
-		"group:project-clarence": [korut94]
+		"group:admin": ["korut94@"],
+		"group:family": ["korut94@", "usagi@"],
+		"group:clarence": ["korut94@", "test-user@"],
 	},
 	"tagOwners": {
-		"tag:production": ["group:admin"],
-		"tag:private": ["group:admin"]
+		"tag:nas": ["group:admin"],
+		"tag:p4d": ["group:admin"],
+		"tag:p4p": ["group:admin", "p4@"]
 	},
 	"acls": [
-		// Admin can access to everything
 		{
 			"action": "accept",
 			"src": ["group:admin"],
 			"dst": ["*:*"]
 		},
-		// Family can access to private services
 		{
 			"action": "accept",
-			"src": ["group:family"],
-			"dst": ["tag:private:*"]
+			"src": ["tag:p4p"],
+			"dst": ["tag:p4d:*"]
 		},
-		// Project Clarence can access to all production services
 		{
 			"action": "accept",
-			"src": ["group:project-clarence"],
-			"dst": ["tag:production:*"]
+			"src": ["group:clarence"],
+			"dst": [
+				"tag:p4p:*"
+			]
 		}
 	]
 }
