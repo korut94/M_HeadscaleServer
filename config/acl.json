@@ -2,7 +2,14 @@
 	"groups": {
 		"group:admin": ["korut94@"],
 		"group:family": ["korut94@", "usagi@"],
-		"group:clarence": ["korut94@", "test-user@"],
+		"group:clarence": [
+			"azmatico@",
+			"crocco@",
+			"korut94@",
+			"ladytentacle@",
+			"lapo21@",
+			"test-user@"
+		]
 	},
 	"acls": [
 		{
@@ -19,12 +26,14 @@
 			"action": "accept",
 			"src": ["group:clarence"],
 			"dst": [
-				"clarence-p4d:*"
+				"clarence-p4d:*",
+				"community-nas:*"
 			]
 		}
 	],
 	"hosts": {
 		"main-server": "100.64.0.1",
+		"community-nas": "100.64.0.4",
 		"clarence-p4d": "100.64.0.5"
 	}
 }
