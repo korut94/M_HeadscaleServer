@@ -27,13 +27,15 @@
 			"src": ["group:clarence"],
 			"dst": [
 				"clarence-p4d:*",
-				"community-nas:*"
+				"community-nas:*",
+				"ue-horde:*"
 			]
 		}
 	],
 	"hosts": {
 		"main-server": "100.64.0.1",
 		"community-nas": "100.64.0.4",
-		"clarence-p4d": "100.64.0.5"
+		"clarence-p4d": "100.64.0.5",
+		"ue-horde": "100.64.0.7"
 	}
 }
