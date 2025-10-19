@@ -1,6 +1,6 @@
 services:
   headscale:
-    image: docker.io/headscale/headscale:latest
+    image: docker.io/headscale/headscale:stable
     container_name: headscale
     ports:
       - "8080:8080"
